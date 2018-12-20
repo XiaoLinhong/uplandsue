@@ -1,0 +1,27 @@
+&description
+  xdim   = 43200         ! x-dimension of raw array
+  ydim   = 21600         ! y-dimension of raw array
+  zdim   = 1             ! z-dimension of raw array
+  xdelta = 1200          ! number of points in each tile
+  ydelta = 1200          ! number of points in each tile
+  known_lat = -89.99583  ! the lat of bottom-left point
+  known_lon = -179.99583 ! the lon of bottom-left point 
+  dx        = 0.00833333 ! the delta x in deg 
+  dy        = 0.00833333 ! the delta y in deg 
+  signed    = 0          ! 0=unsigned data, 1=signed data 
+  endian    = 0          ! 0=big endian, 1=little endian
+  urban     = 13         ! the id of urban
+  wordsize = 1           ! number of bytes to use for each array element
+  scale    = 1.0         ! value to multiply array elements by before truncation to integers
+  newnx    = 19200       ! x-dimension of new array
+  newny    = 12000       ! y-dimension of new array    
+  oldindex = 13          ! index of landuse that will be change in raw data
+  newindex = 13          ! index of landuse that will be change in new data  
+/  
+
+&path
+  oldpath = "/public/home/xiaolh/Data/geog/modis_landuse_20class_30s_with_lakes",
+  newfile = "/public/home/xiaolh/project/updatelanduse/utils/asia_landuse.dat",
+  outpath = "./out",
+/
+

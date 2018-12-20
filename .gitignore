@@ -1,5 +1,6 @@
 # ---> C
 # Object files
+*.dat
 *.o
 *.ko
 *.obj
