@@ -1,6 +1,6 @@
 # 土地利用更新工具
 
-部分更新WRF静态数据中的土地利用数据
+部分更新WRF静态数据中的土地利用数据。
 
 
 ## 转化工具
@@ -29,17 +29,20 @@ nc2bin MCD12Q1.nc asia_landuse.dat 19200 12000
 3. 19200 12000：为网格信息；
 
 MCD12Q1.nc的具体信息如下
-> dimensions:
->     y = 12000 ;
->     x = 19200 ;
-> variables:
->     float lats(y, x) ;
->         lats:_FillValue = -999.f ;
->     float lons(y, x) ;
->         lons:_FillValue = -999.f ;
->     float landuse(y, x) ;
->         landuse:_FillValue = -999.f ;
->         landuse:coordinates = "lons lats" ;
+
+```
+dimensions:
+    y = 12000 ;
+    x = 19200 ;
+variables:
+    float lats(y, x) ;
+        lats:_FillValue = -999.f ;
+    float lons(y, x) ;
+        lons:_FillValue = -999.f ;
+    float landuse(y, x) ;
+        landuse:_FillValue = -999.f ;
+        landuse:coordinates = "lons lats" ;
+```
 
 nc2bin的输出格式如下
 ``` fortran
@@ -98,11 +101,11 @@ vim input.up
 updatelanduse input.up
 ```
 
-运行完成后，可将out文件替代modis_landuse_20class_30s_with_lakes文件，在运行WRF即可
+运行完成后，可将out文件替代modis_landuse_20class_30s_with_lakes文件，在运行WRF即可。
 
 **注意**
 
-更新工具读入的文件格式必须是fortran的无格式文件，安装下面的接口函数转换
+更新工具读入的文件格式必须是fortran的无格式文件，按照下面的接口函数转换。
 
 ``` fortran
 subroutine writenew(fname, nx, ny, lats, lons, array)
@@ -132,4 +135,4 @@ subroutine writenew(fname, nx, ny, lats, lons, array)
 end subroutine writenew
 ```
 
-具体操作可参见nc2bin
+具体操作可参见nc2bin。
