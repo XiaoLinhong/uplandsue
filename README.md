@@ -57,7 +57,12 @@ open(100,file=trim(fname), form='unformatted', iostat=ierror, iomsg=errormg)
 更新工具的名称为updatelanduse，存放在HOME/src目录中。设计的目的是基于WRF原有的静态数据，只更新其中一种土地利用类型。
 
 **安装**
+
+安装时注意编译器的选择即可。
+
+``` bash
 bash install.sh
+```
 
 **配置**
 
